@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETECH - Tecnologia e Inovação</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://github.com/Young4Rare/Site.DETECH.git"/>
+    <link rel="stylesheet" type="text/css" href="https://github.com/Young4Rare/Site.DETECH.git"/>
+   
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .slider div {
+            position: relative;
+            padding: 10px;
+        }
+        .slider img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        /* Estilos do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: left;
+        }
+        .close {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DETECH</h1>
+    </header>
+    
+    <section class="slider">
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.webp" alt="Notebook"><button class="btn" onclick="openModal('notebook')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\hd-wd-red-plus-4tb-5400-rpm-3-5-sata-wd40efpx_1691495627_g - Atalho.lnk" alt="HD"><button class="btn" onclick="openModal('hd')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\fonte-msi-mag-a650bn-atx-650w-80-plus-bronze-pfc-ativo-entrada-bivolt-preto-306-7zp2b22-ce0_1665770996_g.webp" alt="Fontes"><button class="btn" onclick="openModal('fontes')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\processador-intel-core-i9-14900k-bx8071514900k_1697721913_g.webp" alt="Processador"><button class="btn" onclick="openModal('processador')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\222507-800-auto.webp" alt="SSD"><button class="btn" onclick="openModal('ssd')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\1307_product-00077446_m1_637273803019972412.webp" alt="Fone de Ouvido"><button class="btn" onclick="openModal('fone')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\Kit_Gamer_4_Em_1_Headset_Teclado_Mouse_Mousepad_Warzone_Ref_CGWZ41_Elg_eletronicos_0.webp" alt="Kit Gamer"><button class="btn" onclick="openModal('kit_gamer')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\gabinete-gamer-rise-mode-galaxy-glass-m-mini-m-atx-lateral-e-frontal-em-vidro-temperado-branco-rm-ga-ggmn-fw_1715103691_g.webp" alt="Gabinete"><button class="btn" onclick="openModal('gabinete')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\mouse-gamer-sem-fio-logitech-g-pro-x-superlight-2-com-lightspeed-sensor-hero-2-com-32k-dpi-e-bateria-recarregavel-preto-910-006629_1696607229_g.webp" alt="Mouse"><button class="btn" onclick="openModal('mouse')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\17339436347797_zoom.webp" alt="Teclado"><button class="btn" onclick="openModal('teclado')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\webcam-logitech-c920-usb-full-hd-1080p-preta-960-000764-1.webp" alt="WebCam"><button class="btn" onclick="openModal('webcam')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\514wZrVpMhL._AC_UF1000,1000_QL80_.jpg" alt="Adaptador USB"><button class="btn" onclick="openModal('adaptador_usb')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\shopping.webp" alt="Modem"><button class="btn" onclick="openModal('modem')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\8-4.webp" alt="Repetidor"><button class="btn" onclick="openModal('repetidor')">Ver Detalhes</button></div>
+        <div><img src="c:\Users\RARE\OneDrive\Área de Trabalho\Meus projetos\SITE\1-po27o24j9i.webp" alt="Placa de Rede"><button class="btn" onclick="openModal('placa_rede')">Ver Detalhes</button></div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-img" src="" alt="" style="width: 100%; border-radius: 10px;">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            });
+        });
+
+        const products = {
+            notebook: { title: "Notebook Gamer", img: "notebook.jpg", description: "notebook Gamer Acer Nitro V15 intelcore-i5-13420h 8GB RAM Geforce RTX-3050 ssd-512gb 15-6-fhd-ips-144hz windows-11 preto." },
+            hd: { title: "HD 4TB", img: "hd.jpg", description: "Armazenamento seguro, conexão USB 3.5 para maior velocidade." },
+            fontes: { title: "Fonte 650W", img: "fontes.jpg", description: "Fonte MSI MAG A650BN 650W 80 Plus Bronze PFC Ativo Com Cabo Preto." },
+            processador: { title: "Processador Intel Core i9-14900K", img: "processador.jpg", description: "14ª Geração 6GHz Max Turbo Cache 36MB 24 Núcleos 32 Threads LGA1700." },
+            ssd: { title: "SSD NVMe 1TB", img: "ssd.jpg", description: "Velocidade ultra rápida, ideal para games e produtividade." },
+            fone: { title: "Fone de Ouvido JBL", img: "fone.jpg", description: "Confortável, som de alta qualidade e bateria de longa duração COM FIO." },
+            kit_gamer: { title: "Kit Gamer Completo", img: "kit_gamer.jpg", description: "Teclado, mouse, headset e mousepad com iluminação RGB." },
+            gabinete: { title: "Gabinete Gamer RGB", img: "gabinete.jpg", description: "Gabinete Gamer RiseMode Galaxyglass m-mini-m-atx-lateral e frontal em vidro temperado branco." },
+            mouse: { title: "Mouse Logitech", img: "mouse.jpg", description: "Mouse Gamer Sem Fio Logitech G Pro X Superlight 2 com Lightspeed 32000 DPI, Sensor Hero 2, com Bateria Recarregável, Preto" },
+            teclado: { title: "Teclado Mecânico RGB", img: "teclado.jpg", description: "Switches mecânicos, iluminação RGB e design compacto." },
+            webcam: { title: "WebCam Full HD", img: "webcam.jpg", description: "Resolução 1080p, microfone embutido e ajuste de ângulo." },
+            adaptador_usb: { title: "Adaptador USB 3.0", img: "adaptador_usb.jpg", description: "Compatível com diversos dispositivos, transferência rápida." },
+            modem: { title: "Modem Wi-Fi", img: "modem.jpg", description: "Conexão estável para navegação e streaming." },
+            repetidor: { title: "Repetidor Wi-Fi", img: "repetidor.jpg", description: "Amplia o sinal Wi-Fi para maior alcance." },
+            placa_rede: { title: "Placa de Rede Gigabit", img: "placa_rede.jpg", description: "Alta velocidade para jogos e streaming." }
+        };
+
+        function openModal(productKey) {
+            const product = products[productKey];
+            document.getElementById("modal-title").innerText = product.title;
+            document.getElementById("modal-img").src = product.img;
+            document.getElementById("modal-description").innerText = product.description;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DETECH - Tecnologia e Inovação</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .slider div {
+        position: relative;
+        padding: 10px;
+    }
+    .slider img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .btn:hover {
+        background: #0056b3;
+    }
+    #cart {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    #cart ul {
+        list-style: none;
+        padding: 0;
+    }
+    #cart ul li {
+        margin: 5px 0;
+    }
+</style>
+</body>
+</html>
