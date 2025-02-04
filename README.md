@@ -2,7 +2,7 @@ DETECH - Site Oficial
 
 📌 Sobre o Projeto
 
-O DETECH é o site oficial da loja de informática DETECH, desenvolvido inicialmente com HTML e, futuramente, aprimorado com CSS e JavaScript para oferecer uma experiência moderna e responsiva aos usuários.
+O DETECH é o site oficial da loja de informática DETECH, desenvolvido inicialmente com HTML e CSS, com JavaScript para oferecer uma experiência moderna e responsiva aos usuários.
 
 🚀 Tecnologias Utilizadas
 
